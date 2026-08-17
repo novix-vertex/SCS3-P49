@@ -1,6 +1,5 @@
-import { Navbar } from "@/components/navbar";
+import { Navbar } from "@/components/Navbar";
 import ComponentDemo from "../ComponentsDemo";
-import PropsTable from "@/components/Personal/PropsTable";
 
 const NavbarPage = () => {
   const usageCode = `import ComponentDemo from "../ComponentsDemo";
@@ -17,7 +16,7 @@ const NavbarPage = () => {
       </div>
 
       <section className="space-y-4 flex flex-col gap-10">
-        <h2 className="text-2xl font-semibold">Examples</h2>
+        <h2 className="text-2xl font-semibold">Example</h2>
 
         <div className="space-y-2">
           <h3 className="text-lg font-medium">Normal</h3>
