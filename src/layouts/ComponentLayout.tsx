@@ -1,14 +1,20 @@
 import { useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router";
 import { Menu } from "lucide-react";
+import { useSelector } from "react-redux";
 
 type Props = {};
 
-const ComponentLayout = ({}: Props) => {
+const ComponentLayout = ({ }: Props) => {
   const location = useLocation();
   console.log(location);
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const { mode } = useSelector(
+    (state: { theme: { mode: string } }) => state.theme
+  );
+  console.log("this is theme->", mode);
 
   const components = [
     "Button",
@@ -22,7 +28,7 @@ const ComponentLayout = ({}: Props) => {
   ];
 
   return (
-    <div className="flex min-h-screen text-gray-900">
+    <div className={`flex min-h-screen  ${mode === "dark" && "text-white"}text-gray-900 `}>
       <aside
         className={`
           w-64 p-6 flex flex-col
@@ -39,11 +45,10 @@ const ComponentLayout = ({}: Props) => {
             <li
               onClick={() => navigate(item.toLowerCase())}
               key={item}
-              className={`cursor-pointer hover:text-black text-md hover:translate-x-1 transition-all duration-200 ease-in-out ${
-                location.pathname === `/components/${item.toLowerCase()}`
-                  ? "text-black"
+              className={`cursor-pointer ${mode==="dark"?"hover:text-white":"hover:text-black"} text-md hover:translate-x-1 transition-all duration-200 ease-in-out ${location.pathname === `/components/${item.toLowerCase()}`
+                ? `${mode === "dark" ? "text-white" : "text-black"}`
                   : "text-gray-400"
-              }`}
+                }`}
             >
               {item}
             </li>

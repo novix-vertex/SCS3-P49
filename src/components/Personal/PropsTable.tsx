@@ -9,7 +9,7 @@ interface PropsTableProps {
 
 const PropsTable = ({ data }: PropsTableProps) => {
   return (
-    <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
+    <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm bg-gray-200">
       <table className="w-full">
         <thead className="">
           <tr>

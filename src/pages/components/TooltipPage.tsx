@@ -6,13 +6,13 @@ import PropsTable from '@/components/Personal/PropsTable';
 
 const TooltipPage = () => {
     const usageCode = `import { Button } from "@/components/Button/Button"
-  
-    <Tooltip content="Button1" position="top" variant="dark">
-        <Button variant="primary" animation="bounceIn" hoverAnimation="jiggle" size="xl">Hover me</Button>
-    </Tooltip>
-    <Tooltip content="Button1" position="right" variant="light">
-        <Button variant="dark" animation="bounceIn" hoverAnimation="bounce" size="lg">Hover me</Button>
-    </Tooltip>`;
+    
+<Tooltip content="Button1" position="top" variant="dark">
+    <Button variant="primary" animation="bounceIn" hoverAnimation="jiggle" size="xl">Hover me</Button>
+</Tooltip>
+<Tooltip content="Button1" position="right" variant="light">
+    <Button variant="dark" animation="bounceIn" hoverAnimation="bounce" size="lg">Hover me</Button>
+</Tooltip>`;
 
     const propsData = [
         {
