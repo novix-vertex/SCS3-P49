@@ -29,9 +29,7 @@ const ComponentLayout = ({ }: Props) => {
 
   return (
     <div
-      className={`flex min-h-screen ${mode === "dark"
-        ? "bg-black text-white"
-        : "bg-white text-gray-900"
+      className={`flex min-h-screen ${mode === "dark" ? "text-white" : "text-gray-900"
         }`}
     >
       <aside
