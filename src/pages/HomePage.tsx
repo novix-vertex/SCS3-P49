@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { useSelector } from "react-redux";
+import { Button } from "@/components/Button";
 
 type Props = {};
 
@@ -13,7 +14,7 @@ const HomePage = ({}: Props) => {
   return (
     <main
       className={`min-h-screen ${
-        dark ? "bg-gray-950 text-white" : "bg-white text-gray-900"
+        dark ? "bg-black text-white" : "bg-white text-gray-900"
       }`}
     >
       {/* Intro */}
@@ -24,6 +25,7 @@ const HomePage = ({}: Props) => {
       >
         <div className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
           <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            {/* Left */}
             <div>
               <p
                 className={`mb-5 text-sm font-medium ${
@@ -36,7 +38,9 @@ const HomePage = ({}: Props) => {
               <h1 className="max-w-3xl text-5xl font-semibold tracking-[-0.04em] sm:text-6xl">
                 UI components,
                 <br />
-                <span className={dark ? "text-gray-500" : "text-gray-400"}>
+                <span
+                  className={dark ? "text-gray-500" : "text-gray-400"}
+                >
                   without the busywork.
                 </span>
               </h1>
@@ -51,28 +55,22 @@ const HomePage = ({}: Props) => {
                 building.
               </p>
 
-              <div className="mt-8 flex items-center gap-4">
-                <Link
-                  to="/components"
-                  className={`rounded-lg px-5 py-2.5 text-sm font-medium transition ${
-                    dark
-                      ? "bg-white text-gray-900 hover:bg-gray-200"
-                      : "bg-gray-900 text-white hover:bg-gray-700"
-                  }`}
-                >
-                  Browse components
-                </Link>
+              <div className="mt-8">
+                <Button asChild variant="dark" size="sm">
+                  <Link to="/components">Browse components</Link>
+                </Button>
               </div>
             </div>
 
-            {/* Component preview */}
+            {/* Component Preview */}
             <div
               className={`rounded-2xl border p-5 ${
                 dark
-                  ? "border-gray-800 bg-gray-900"
+                  ? "border-gray-800 bg-black"
                   : "border-gray-200 bg-gray-50"
               }`}
             >
+              {/* Editor header */}
               <div
                 className={`mb-4 flex items-center gap-2 border-b pb-4 ${
                   dark ? "border-gray-800" : "border-gray-200"
@@ -91,10 +89,11 @@ const HomePage = ({}: Props) => {
                 </span>
               </div>
 
+              {/* Preview */}
               <div
                 className={`rounded-xl border p-8 ${
                   dark
-                    ? "border-gray-800 bg-gray-950"
+                    ? "border-gray-800 bg-black"
                     : "border-gray-200 bg-white"
                 }`}
               >
@@ -107,35 +106,17 @@ const HomePage = ({}: Props) => {
                 </p>
 
                 <div className="flex flex-wrap gap-3">
-                  <button
-                    className={`rounded-lg px-4 py-2 text-sm font-medium ${
-                      dark
-                        ? "bg-white text-gray-900"
-                        : "bg-gray-900 text-white"
-                    }`}
-                  >
+                  <Button variant="dark" size="sm">
                     Primary
-                  </button>
+                  </Button>
 
-                  <button
-                    className={`rounded-lg border px-4 py-2 text-sm font-medium ${
-                      dark
-                        ? "border-gray-700 text-gray-300"
-                        : "border-gray-300 text-gray-700"
-                    }`}
-                  >
+                  <Button variant="outline" size="sm">
                     Secondary
-                  </button>
+                  </Button>
 
-                  <button
-                    className={`rounded-lg px-4 py-2 text-sm font-medium ${
-                      dark
-                        ? "bg-gray-800 text-gray-300"
-                        : "bg-gray-100 text-gray-700"
-                    }`}
-                  >
+                  <Button variant="ghost" size="sm">
                     Ghost
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -214,7 +195,9 @@ const HomePage = ({}: Props) => {
                 </span>
 
                 <div className="mt-8 flex items-center justify-between">
-                  <span className="text-sm font-medium">{component}</span>
+                  <span className="text-sm font-medium">
+                    {component}
+                  </span>
 
                   <span
                     className={`transition group-hover:translate-x-1 ${
@@ -236,7 +219,7 @@ const HomePage = ({}: Props) => {
       <section
         className={`border-t ${
           dark
-            ? "border-gray-800 bg-gray-900/40"
+            ? "border-gray-800 bg-gray-950"
             : "border-gray-200 bg-gray-50"
         }`}
       >
