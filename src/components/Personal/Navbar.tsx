@@ -32,29 +32,33 @@ const Navbar = () => {
       </div>
 
       <ul className="hidden md:flex items-center gap-6 text-gray-500">
-        <li
-          onClick={() => navigate("components")}
-          className="cursor-pointer hover:text-black"
-        >
-          Components
-        </li>
-        <li className="cursor-pointer hover:text-black">About</li>
-        <li className="cursor-pointer hover:text-black">Templates</li>
         {mode === "dark" && (
-          <li
-            className="cursor-pointer p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
-            onClick={() => dispatch(toggleTheme())}
-          >
-            <Sun size={20} className="text-yellow-400" />
-          </li>
+          <>
+            <li onClick={() => navigate("components")} className="cursor-pointer hover:text-white">Components</li>
+            <li className="cursor-pointer hover:text-white">About</li>
+            <li className="cursor-pointer hover:text-white">Templates</li>
+
+            <li
+              className="cursor-pointer p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+              onClick={() => dispatch(toggleTheme())}
+            >
+              <Sun size={20} className="text-yellow-400" />
+            </li>
+          </>
         )}
         {mode === "light" && (
-          <li
-            className="cursor-pointer p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
-            onClick={() => dispatch(toggleTheme())}
-          >
-            <Moon size={20} className="text-gray-600 dark:text-gray-400" />
-          </li>
+          <>
+            <li onClick={() => navigate("components")} className="cursor-pointer hover:text-black">Components</li>
+            <li className="cursor-pointer hover:text-black">About</li>
+            <li className="cursor-pointer hover:text-black">Templates</li>
+
+            <li
+              className="cursor-pointer p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+              onClick={() => dispatch(toggleTheme())}
+            >
+              <Moon size={20} className="text-gray-600 dark:text-gray-400" />
+            </li>
+          </>
         )}
       </ul>
 

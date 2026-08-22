@@ -7,7 +7,7 @@
 }
 
 [data-theme="dark"] {
-  --bg-color: #030712;
+  --bg-color: black;
   --text-color: #f4f4f5;
   --primary-color: #3b82f6;
   --card-bg: #27272a;

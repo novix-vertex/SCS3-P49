@@ -29,7 +29,7 @@ const buttonVariants = cva(
         ghost: "bg-gray-50 hover:bg-gray-100 text-gray-700",
         link: "bg-transparent hover:bg-transparent text-indigo-600",
         outline:
-          "bg-transparent hover:bg-gray-100 text-gray-700 border border-gray-300",
+          "bg-transparent hover:bg-gray-100 text-gray-500 border border-gray-300",
       },
       size: {
         default: "px-9 py-3",

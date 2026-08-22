@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+
 interface PropsTableProps {
   data: {
     prop: string;
@@ -8,8 +10,11 @@ interface PropsTableProps {
 }
 
 const PropsTable = ({ data }: PropsTableProps) => {
+  const { mode } = useSelector(
+    (state: { theme: { mode: string } }) => state.theme
+  );
   return (
-    <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm bg-gray-200">
+    <div className={`overflow-hidden rounded-lg border shadow-sm ${mode === "dark" ? "border-gray-800 bg-gray-800" : "border-gray-200 bg-gray-200"}`}>
       <table className="w-full">
         <thead className="">
           <tr>
@@ -23,19 +28,19 @@ const PropsTable = ({ data }: PropsTableProps) => {
             </th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-200">
+        <tbody className={`divide-y ${mode === "dark" ? "divide-gray-700" : "divide-gray-200"}`}>
           {data.map((row, i) => (
-            <tr key={i} className="hover:bg-gray-50 transition-colors">
-              <td className="px-4 py-3 text-sm font-mono text-blue-600">
+            <tr key={i} className={`${mode === "dark" ? "hover:bg-gray-700" : "hover:bg-gray-50"} transition-colors`}>
+              <td className={`px-4 py-3 text-sm font-mono text-blue-600`}>
                 {row.prop}
               </td>
-              <td className="px-4 py-3 text-sm font-mono text-gray-600">
+              <td className={`px-4 py-3 text-sm font-mono ${mode === "dark" ? "text-gray-500" : "text-gray-600"}`}>
                 {row.type}
               </td>
-              <td className="px-4 py-3 text-sm font-mono text-gray-500">
+              <td className={`px-4 py-3 text-sm font-mono ${mode === "dark" ? "text-gray-400" : "text-gray-500"}`}>
                 {row.default}
               </td>
-              <td className="px-4 py-3 text-sm text-gray-700">
+              <td className={`px-4 py-3 text-sm ${mode === "dark" ? "text-gray-300" : "text-gray-700"}`}>
                 {row.description}
               </td>
             </tr>
