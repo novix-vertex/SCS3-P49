@@ -4,7 +4,7 @@ import { Button } from "@/components/Button";
 
 type Props = {};
 
-const HomePage = ({}: Props) => {
+const HomePage = ({ }: Props) => {
   const { mode } = useSelector(
     (state: { theme: { mode: string } }) => state.theme
   );
@@ -12,25 +12,19 @@ const HomePage = ({}: Props) => {
   const dark = mode === "dark";
 
   return (
-    <main
-      className={`min-h-screen ${
-        dark ? "bg-black text-white" : "bg-white text-gray-900"
-      }`}
-    >
+    <main className={dark ? "text-white" : "text-gray-900"}>
       {/* Intro */}
       <section
-        className={`border-b ${
-          dark ? "border-gray-800" : "border-gray-200"
-        }`}
+        className={`border-b ${dark ? "border-gray-800" : "border-gray-200"
+          }`}
       >
         <div className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
           <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             {/* Left */}
             <div>
               <p
-                className={`mb-5 text-sm font-medium ${
-                  dark ? "text-gray-400" : "text-gray-500"
-                }`}
+                className={`mb-5 text-sm font-medium ${dark ? "text-gray-400" : "text-gray-500"
+                  }`}
               >
                 EaseUI / React Component Library
               </p>
@@ -46,9 +40,8 @@ const HomePage = ({}: Props) => {
               </h1>
 
               <p
-                className={`mt-6 max-w-xl text-lg leading-8 ${
-                  dark ? "text-gray-400" : "text-gray-600"
-                }`}
+                className={`mt-6 max-w-xl text-lg leading-8 ${dark ? "text-gray-400" : "text-gray-600"
+                  }`}
               >
                 A growing collection of reusable React components built with
                 Tailwind CSS. Copy what you need, customize it, and keep
@@ -64,26 +57,23 @@ const HomePage = ({}: Props) => {
 
             {/* Component Preview */}
             <div
-              className={`rounded-2xl border p-5 ${
-                dark
+              className={`rounded-2xl border p-5 ${dark
                   ? "border-gray-800 bg-black"
                   : "border-gray-200 bg-gray-50"
-              }`}
+                }`}
             >
               {/* Editor header */}
               <div
-                className={`mb-4 flex items-center gap-2 border-b pb-4 ${
-                  dark ? "border-gray-800" : "border-gray-200"
-                }`}
+                className={`mb-4 flex items-center gap-2 border-b pb-4 ${dark ? "border-gray-800" : "border-gray-200"
+                  }`}
               >
                 <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
                 <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
                 <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
 
                 <span
-                  className={`ml-2 text-xs ${
-                    dark ? "text-gray-500" : "text-gray-400"
-                  }`}
+                  className={`ml-2 text-xs ${dark ? "text-gray-500" : "text-gray-400"
+                    }`}
                 >
                   Button.tsx
                 </span>
@@ -91,16 +81,14 @@ const HomePage = ({}: Props) => {
 
               {/* Preview */}
               <div
-                className={`rounded-xl border p-8 ${
-                  dark
+                className={`rounded-xl border p-8 ${dark
                     ? "border-gray-800 bg-black"
                     : "border-gray-200 bg-white"
-                }`}
+                  }`}
               >
                 <p
-                  className={`mb-6 text-sm ${
-                    dark ? "text-gray-400" : "text-gray-500"
-                  }`}
+                  className={`mb-6 text-sm ${dark ? "text-gray-400" : "text-gray-500"
+                    }`}
                 >
                   A simple component, ready to use.
                 </p>
@@ -130,9 +118,8 @@ const HomePage = ({}: Props) => {
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p
-                className={`text-sm font-medium ${
-                  dark ? "text-gray-500" : "text-gray-400"
-                }`}
+                className={`text-sm font-medium ${dark ? "text-gray-500" : "text-gray-400"
+                  }`}
               >
                 01
               </p>
@@ -142,9 +129,8 @@ const HomePage = ({}: Props) => {
               </h2>
 
               <p
-                className={`mt-2 ${
-                  dark ? "text-gray-400" : "text-gray-500"
-                }`}
+                className={`mt-2 ${dark ? "text-gray-400" : "text-gray-500"
+                  }`}
               >
                 Start with the building blocks you need.
               </p>
@@ -152,20 +138,18 @@ const HomePage = ({}: Props) => {
 
             <Link
               to="/components"
-              className={`text-sm font-medium ${
-                dark
+              className={`text-sm font-medium ${dark
                   ? "text-gray-300 hover:text-white"
                   : "text-gray-700 hover:text-black"
-              }`}
+                }`}
             >
               View all →
             </Link>
           </div>
 
           <div
-            className={`mt-10 grid grid-cols-2 border-l border-t sm:grid-cols-4 ${
-              dark ? "border-gray-800" : "border-gray-200"
-            }`}
+            className={`mt-10 grid grid-cols-2 border-l border-t sm:grid-cols-4 ${dark ? "border-gray-800" : "border-gray-200"
+              }`}
           >
             {[
               "Button",
@@ -180,16 +164,14 @@ const HomePage = ({}: Props) => {
               <Link
                 key={component}
                 to={`/components/${component.toLowerCase()}`}
-                className={`group border-b border-r p-5 transition ${
-                  dark
+                className={`group border-b border-r p-5 transition ${dark
                     ? "border-gray-800 hover:bg-gray-900"
                     : "border-gray-200 hover:bg-gray-50"
-                }`}
+                  }`}
               >
                 <span
-                  className={`text-xs ${
-                    dark ? "text-gray-600" : "text-gray-400"
-                  }`}
+                  className={`text-xs ${dark ? "text-gray-600" : "text-gray-400"
+                    }`}
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -200,11 +182,10 @@ const HomePage = ({}: Props) => {
                   </span>
 
                   <span
-                    className={`transition group-hover:translate-x-1 ${
-                      dark
+                    className={`transition group-hover:translate-x-1 ${dark
                         ? "text-gray-600 group-hover:text-white"
                         : "text-gray-300 group-hover:text-gray-700"
-                    }`}
+                      }`}
                   >
                     →
                   </span>
@@ -217,19 +198,17 @@ const HomePage = ({}: Props) => {
 
       {/* Philosophy */}
       <section
-        className={`border-t ${
-          dark
+        className={`border-t ${dark
             ? "border-gray-800 bg-gray-950"
             : "border-gray-200 bg-gray-50"
-        }`}
+          }`}
       >
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="grid gap-10 md:grid-cols-3">
             <div>
               <p
-                className={`text-sm font-medium ${
-                  dark ? "text-gray-500" : "text-gray-400"
-                }`}
+                className={`text-sm font-medium ${dark ? "text-gray-500" : "text-gray-400"
+                  }`}
               >
                 02
               </p>
@@ -240,9 +219,8 @@ const HomePage = ({}: Props) => {
             </div>
 
             <p
-              className={`text-sm leading-7 ${
-                dark ? "text-gray-400" : "text-gray-600"
-              }`}
+              className={`text-sm leading-7 ${dark ? "text-gray-400" : "text-gray-600"
+                }`}
             >
               EaseUI focuses on practical components rather than trying to
               provide every possible UI pattern. Each component is designed
@@ -250,9 +228,8 @@ const HomePage = ({}: Props) => {
             </p>
 
             <p
-              className={`text-sm leading-7 ${
-                dark ? "text-gray-400" : "text-gray-600"
-              }`}
+              className={`text-sm leading-7 ${dark ? "text-gray-400" : "text-gray-600"
+                }`}
             >
               The library is actively evolving. Some components are ready to
               use, while others are still under development.

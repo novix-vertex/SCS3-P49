@@ -28,15 +28,24 @@ const ComponentLayout = ({ }: Props) => {
   ];
 
   return (
-    <div className={`flex min-h-screen  ${mode === "dark" && "text-white"}text-gray-900 `}>
+    <div
+      className={`flex min-h-screen ${mode === "dark"
+        ? "bg-black text-white"
+        : "bg-white text-gray-900"
+        }`}
+    >
       <aside
         className={`
           w-64 p-6 flex flex-col
-          border-r border-gray-200
+          border-r
           fixed md:static top-0 left-0 h-full z-20
           transform ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} 
           transition-transform duration-300 ease-in-out
           md:translate-x-0
+          ${mode === "dark"
+            ? "border-gray-800 bg-black"
+            : "border-gray-200 bg-white"
+          }
         `}
       >
         <h2 className="text-md font-bold mb-6">Components</h2>
@@ -45,9 +54,9 @@ const ComponentLayout = ({ }: Props) => {
             <li
               onClick={() => navigate(item.toLowerCase())}
               key={item}
-              className={`cursor-pointer ${mode==="dark"?"hover:text-white":"hover:text-black"} text-md hover:translate-x-1 transition-all duration-200 ease-in-out ${location.pathname === `/components/${item.toLowerCase()}`
+              className={`cursor-pointer ${mode === "dark" ? "hover:text-white" : "hover:text-black"} text-md hover:translate-x-1 transition-all duration-200 ease-in-out ${location.pathname === `/components/${item.toLowerCase()}`
                 ? `${mode === "dark" ? "text-white" : "text-black"}`
-                  : "text-gray-400"
+                : "text-gray-400"
                 }`}
             >
               {item}
@@ -56,9 +65,10 @@ const ComponentLayout = ({ }: Props) => {
         </ul>
       </aside>
 
-      <div className="flex-1 ml-10 overflow-auto min-h-screen p-6">
+      <div className="flex-1 overflow-auto min-h-screen p-6">
         <button
-          className="md:hidden mb-4 text-gray-700"
+          className={`md:hidden mb-4 ${mode === "dark" ? "text-gray-300" : "text-gray-700"
+            }`}
           onClick={() => setSidebarOpen(!sidebarOpen)}
         >
           <Menu size={24} />
