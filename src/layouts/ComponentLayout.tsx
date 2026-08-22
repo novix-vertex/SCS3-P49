@@ -56,7 +56,7 @@ const ComponentLayout = ({ }: Props) => {
         </ul>
       </aside>
 
-      <div className="flex-1 ml-10 overflow-auto h-screen p-6">
+      <div className="flex-1 ml-10 overflow-auto min-h-screen p-6">
         <button
           className="md:hidden mb-4 text-gray-700"
           onClick={() => setSidebarOpen(!sidebarOpen)}
