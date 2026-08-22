@@ -8,10 +8,12 @@ import ModalPage from "@/pages/components/ModalPage";
 import InputPage from "@/pages/components/InputPage";
 import NavbarPage from "@/pages/components/NavbarPage";
 import TooltipPage from "@/pages/components/TooltipPage";
+import ComingSoonPage from "@/pages/components/ComingSoonPage";
+import ComponentsPage from "@/pages/ComponentsPage";
 
 type Props = {};
 
-const AppRouter = ({}: Props) => {
+const AppRouter = ({ }: Props) => {
   const router = createBrowserRouter([
     {
       path: "/",
@@ -25,6 +27,10 @@ const AppRouter = ({}: Props) => {
           path: "components",
           element: <ComponentLayout />,
           children: [
+            {
+              index: true,
+              element: <ComponentsPage />,
+            },
             {
               path: "button",
               element: <ButtonPage />,
@@ -48,6 +54,14 @@ const AppRouter = ({}: Props) => {
             {
               path: "tooltip",
               element: <TooltipPage />,
+            },
+            {
+              path: "carousel",
+              element: <ComingSoonPage />,
+            },
+            {
+              path: "layout",
+              element: <ComingSoonPage />,
             },
           ],
         },
