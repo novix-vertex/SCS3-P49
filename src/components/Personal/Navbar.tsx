@@ -26,7 +26,7 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search components"
-            className="ml-2 bg-transparent outline-none text-sm text-gray-700 placeholder-gray-400"
+            className={`ml-2 bg-transparent outline-none text-sm  ${mode==="dark"?"text-gray-300 placeholder-gray-400":"text-gray-700 placeholder-gray-400"}`}
           />
         </div>
       </div>
